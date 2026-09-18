@@ -1,18 +1,25 @@
 import { useEffect, useRef } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Footer.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const handleNavClick = (e, id) => {
-  e.preventDefault();
-  const el = document.querySelector(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
-};
-
 export default function Footer() {
   const footerRef = useRef(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (e, id) => {
+    e.preventDefault();
+    if (location.pathname === '/') {
+      const el = document.querySelector(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/' + id);
+    }
+  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -81,7 +88,7 @@ export default function Footer() {
             <div className="footer-col-links">
               <a href="#services" className="footer-link" onClick={(e) => handleNavClick(e, '#services')}>Our Services</a>
               <a href="#contact" className="footer-link" onClick={(e) => handleNavClick(e, '#contact')}>Contact</a>
-              <a href="#about" className="footer-link" onClick={(e) => handleNavClick(e, '#about')}>About Us</a>
+              <Link to="/about" className="footer-link">About Us</Link>
             </div>
           </div>
           <div className="footer-col">

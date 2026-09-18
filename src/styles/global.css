@@ -179,26 +179,6 @@ body {
   }
 }
 
-/* --- Preloader --- */
-.preloader {
-  position: fixed;
-  inset: 0;
-  background: var(--color-black);
-  z-index: 10000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.preloader-logo {
-  font-family: var(--font-heading);
-  font-size: clamp(24px, 3vw, 40px);
-  font-weight: 600;
-  letter-spacing: var(--tracking-wide);
-  color: var(--color-text-primary);
-  opacity: 0;
-}
-
 /* --- Utility --- */
 .sr-only {
   position: absolute;

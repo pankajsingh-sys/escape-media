@@ -10,7 +10,6 @@
 
 .statement-inner {
   text-align: center;
-  padding: var(--space-2xl) 0;
 }
 
 .statement-line {
@@ -32,8 +31,3 @@
   transform-origin: left;
 }
 
-@media (max-width: 768px) {
-  .statement-inner {
-    padding: var(--space-xl) 0;
-  }
-}

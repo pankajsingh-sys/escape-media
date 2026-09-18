@@ -173,19 +173,43 @@
 @media (max-width: 768px) {
   .services-accordion-wrapper {
     flex-direction: column;
-    height: 600px;
+    height: auto;
   }
   .service-accordion-item {
+    flex: none;
+    height: 320px;
     border-left: none;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
   }
   .service-accordion-item:hover {
-    flex: 3;
+    flex: none;
+  }
+  /* No hover on touch devices — show the image and details permanently. */
+  .service-accordion-bg {
+    opacity: 0.55;
+    filter: grayscale(30%);
+  }
+  .service-accordion-item:hover .service-accordion-bg {
+    opacity: 0.55;
+    filter: grayscale(30%);
+  }
+  .service-accordion-vertical-title {
+    display: none;
   }
   .service-accordion-content {
     padding: var(--space-md);
   }
   .service-accordion-details {
-    transform: translateY(15px);
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 430px) {
+  .service-accordion-item {
+    height: 280px;
+  }
+  .service-accordion-desc {
+    max-width: none;
   }
 }

@@ -8,6 +8,26 @@ export default function Hero() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Entrance reveal
+      gsap.fromTo('[data-animate="hero"]',
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1, y: 0,
+          duration: 0.7,
+          stagger: 0.15,
+          ease: 'power3.out',
+          delay: 0.1,
+        }
+      );
+      gsap.fromTo('.hero-media',
+        { clipPath: 'inset(100% 0 0 0)' },
+        {
+          clipPath: 'inset(0% 0 0 0)',
+          duration: 1.2,
+          ease: 'power3.inOut',
+        }
+      );
+
       // Subtle parallax on mouse move (desktop only)
       if (window.matchMedia('(hover: hover)').matches) {
         const handleMouseMove = (e) => {
@@ -52,9 +72,6 @@ export default function Hero() {
       <div className="hero-overlay" aria-hidden="true"></div>
 
       <div className="hero-content">
-        <p className="hero-eyebrow" data-animate="hero">
-          Creative Agency · India
-        </p>
         <h1 className="hero-heading" data-animate="hero">
           Your Brand.<br />
           Our <span className="accent">Creativity.</span>

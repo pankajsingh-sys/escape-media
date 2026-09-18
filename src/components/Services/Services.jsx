@@ -55,13 +55,13 @@ export default function Services() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Header animation
-      gsap.from('.services-header .section-label', {
+      gsap.from('.services-intro .section-label', {
         opacity: 0, y: 20, duration: 0.6,
-        scrollTrigger: { trigger: '.services-header', start: 'top 80%', once: true },
+        scrollTrigger: { trigger: '.services-intro', start: 'top 80%', once: true },
       });
       gsap.from('.services-heading', {
         opacity: 0, y: 30, duration: 0.7,
-        scrollTrigger: { trigger: '.services-header', start: 'top 80%', once: true },
+        scrollTrigger: { trigger: '.services-intro', start: 'top 80%', once: true },
       });
 
       // Accordion animation

@@ -124,10 +124,19 @@
     order: 2;
   }
   .about-image-wrapper {
-    min-height: 400px;
+    min-height: 280px;
   }
   .about-image-wrapper img {
     position: relative;
-    height: 400px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 430px) {
+  .about-image-wrapper {
+    min-height: 220px;
+  }
+  .about-image-wrapper img {
+    height: 220px;
   }
 }

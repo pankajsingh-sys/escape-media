@@ -20,7 +20,7 @@
   --font-body: 'Manrope', sans-serif;
 
   /* --- Type Scale --- */
-  --text-hero: clamp(56px, 8vw, 120px);
+  --text-hero: clamp(56px, 7vw, 96px);
   --text-section: clamp(40px, 5vw, 72px);
   --text-service: clamp(32px, 4vw, 56px);
   --text-body: clamp(16px, 1.2vw, 18px);

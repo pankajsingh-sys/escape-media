@@ -1,8 +1,8 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import Preloader from './components/Preloader/Preloader';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import Stats from './components/Stats/Stats';
@@ -14,11 +14,37 @@ import FAQ from './components/FAQ/FAQ';
 import ContactCTA from './components/ContactCTA/ContactCTA';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import AboutPage from './pages/About/AboutPage';
 
 gsap.registerPlugin(ScrollTrigger);
 
+function HomePage() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
+    }
+  }, [location.hash]);
+
+  return (
+    <main>
+      <Hero />
+      <Stats />
+      <About />
+      <Statement />
+      <Services />
+      <SocialProof />
+      <FAQ />
+      <ContactCTA />
+      <Contact />
+    </main>
+  );
+}
+
 export default function App() {
-  const [loaded, setLoaded] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
@@ -27,53 +53,19 @@ export default function App() {
     window.scrollTo(0, 0);
   }, []);
 
-  const handlePreloaderComplete = useCallback(() => {
-    setLoaded(true);
-
-    // Hero content reveal sequence
-    const heroElements = document.querySelectorAll('[data-animate="hero"]');
-    gsap.fromTo(heroElements,
-      { opacity: 0, y: 30 },
-      {
-        opacity: 1, y: 0,
-        duration: 0.7,
-        stagger: 0.15,
-        ease: 'power3.out',
-        delay: 0.1,
-      }
-    );
-
-    // Hero image clip-path reveal
-    const heroMedia = document.querySelector('.hero-media');
-    if (heroMedia) {
-      gsap.fromTo(heroMedia,
-        { clipPath: 'inset(100% 0 0 0)' },
-        {
-          clipPath: 'inset(0% 0 0 0)',
-          duration: 1.2,
-          ease: 'power3.inOut',
-        }
-      );
-    }
-  }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <>
-      <Preloader onComplete={handlePreloaderComplete} />
       <div className="grain-overlay" aria-hidden="true"></div>
 
       <Navbar />
-      <main>
-        <Hero />
-        <Stats />
-        <About />
-        <Statement />
-        <Services />
-        <SocialProof />
-        <FAQ />
-        <ContactCTA />
-        <Contact />
-      </main>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+      </Routes>
       <Footer />
     </>
   );
