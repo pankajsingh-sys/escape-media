@@ -1,0 +1,79 @@
+/* ============================================
+   SOCIAL PROOF
+   ============================================ */
+
+.social-proof {
+  padding: var(--section-gap) 0;
+  background: var(--color-bg-primary);
+  overflow: hidden;
+}
+
+.social-proof-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.social-proof-heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-section);
+  font-weight: 500;
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-sm);
+}
+
+.social-proof-sub {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-secondary);
+}
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: var(--border);
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl) var(--space-md);
+  border-bottom: var(--border);
+  border-right: var(--border);
+  min-height: 120px;
+}
+
+.logo-item:nth-child(5n) {
+  border-right: none;
+}
+
+.brand-logo {
+  color: rgba(255, 255, 255, 0.3);
+  transition: color var(--duration-base) var(--ease-out), transform var(--duration-base) var(--ease-out);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-item:hover .brand-logo {
+  color: rgba(255, 255, 255, 0.9);
+  transform: scale(1.05);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .logo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .logo-item:nth-child(5n) {
+    border-right: var(--border);
+  }
+  .logo-item:nth-child(2n) {
+    border-right: none;
+  }
+  .logo-item:last-child {
+    grid-column: 1 / -1;
+    border-right: none;
+  }
+}

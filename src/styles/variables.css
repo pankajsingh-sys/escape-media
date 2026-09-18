@@ -1,0 +1,99 @@
+/* ============================================
+   ESCAPE MEDIA — DESIGN TOKENS
+   ============================================ */
+
+:root {
+  /* --- Colors --- */
+  --color-bg-primary: #080808;
+  --color-bg-secondary: #101010;
+  --color-bg-surface: #151515;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #A3A3A3;
+  --color-text-muted: #6F6F6F;
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-accent: #D71920;
+  --color-accent-hover: #f02028;
+  --color-black: #000000;
+
+  /* --- Typography --- */
+  --font-heading: 'Raleway', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+
+  /* --- Type Scale --- */
+  --text-hero: clamp(56px, 8vw, 120px);
+  --text-section: clamp(40px, 5vw, 72px);
+  --text-service: clamp(32px, 4vw, 56px);
+  --text-body: clamp(16px, 1.2vw, 18px);
+  --text-body-sm: 15px;
+  --text-label: 12px;
+  --text-label-lg: 14px;
+  --text-nav: 14px;
+  --text-stat: clamp(40px, 5vw, 64px);
+  --text-statement: clamp(28px, 4vw, 56px);
+  --text-cta-heading: clamp(40px, 5vw, 64px);
+
+  /* --- Line Heights --- */
+  --leading-hero: 0.95;
+  --leading-heading: 1.05;
+  --leading-body: 1.65;
+  --leading-label: 1;
+
+  /* --- Letter Spacing --- */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.12em;
+
+  /* --- Spacing --- */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
+  --space-2xl: 80px;
+  --space-3xl: 120px;
+  --space-4xl: 160px;
+  --section-gap: clamp(80px, 10vw, 160px);
+
+  /* --- Grid --- */
+  --grid-max-width: 1600px;
+  --grid-padding: 56px;
+  --grid-columns: 12;
+  --grid-gap: 24px;
+
+  /* --- Borders --- */
+  --border: 1px solid var(--color-border);
+  --border-radius-sm: 0px;
+  --border-radius-md: 2px;
+
+  /* --- Transitions --- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 250ms;
+  --duration-base: 350ms;
+  --duration-slow: 500ms;
+
+  /* --- Z-Index --- */
+  --z-cursor: 9999;
+  --z-nav: 1000;
+  --z-menu: 999;
+  --z-grain: 998;
+  --z-hero-content: 10;
+}
+
+/* --- Tablet --- */
+@media (max-width: 1024px) {
+  :root {
+    --grid-padding: 32px;
+    --grid-columns: 8;
+  }
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+  :root {
+    --grid-padding: 22px;
+    --grid-columns: 4;
+    --grid-gap: 16px;
+  }
+}
