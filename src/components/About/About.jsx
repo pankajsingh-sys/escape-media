@@ -70,7 +70,7 @@ export default function About() {
           </div>
           <div className="about-image-wrapper">
             <img
-              src="/images/about-team.jpg"
+              src="/images/about-page-team.jpg"
               alt="Escape Media creative team collaborating in their studio"
               loading="lazy"
               width="600"
