@@ -97,12 +97,10 @@ export default function AboutPage() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.about-page-eyebrow', { opacity: 0, y: 20, duration: 0.6 });
-      gsap.from('.about-page-heading', { opacity: 0, y: 30, duration: 0.7, delay: 0.1 });
-      gsap.from('.about-page-hero-sub', { opacity: 0, y: 20, duration: 0.6, delay: 0.2 });
-      gsap.from('.about-page-hero-media-wrap', {
-        opacity: 0, y: 40, duration: 1, delay: 0.25, ease: 'power3.out',
-      });
+      gsap.from('.about-page-hero-media', { opacity: 0, scale: 1.08, duration: 1.2, ease: 'power3.out' });
+      gsap.from('.about-page-eyebrow', { opacity: 0, y: 20, duration: 0.6, delay: 0.2 });
+      gsap.from('.about-page-heading', { opacity: 0, y: 30, duration: 0.7, delay: 0.3 });
+      gsap.from('.about-page-hero-sub', { opacity: 0, y: 20, duration: 0.6, delay: 0.4 });
 
       document.querySelectorAll('[data-reveal]').forEach((el) => {
         gsap.from(el, {
@@ -166,8 +164,17 @@ export default function AboutPage() {
     <main className="about-page" ref={pageRef}>
       {/* Hero */}
       <section className="about-page-hero">
-        <div className="about-page-glow" aria-hidden="true"></div>
-        <div className="container">
+        <div className="about-page-hero-media">
+          <img
+            src="/images/about-page-team.jpg"
+            alt="Team Escape Media"
+            loading="eager"
+            fetchPriority="high"
+          />
+        </div>
+        <div className="about-page-hero-overlay" aria-hidden="true"></div>
+
+        <div className="container about-page-hero-content">
           <p className="section-label about-page-eyebrow"><span>About</span> — Escape Media</p>
           <h1 className="about-page-heading">
             We Don't Just Build Brands.<br />
@@ -177,19 +184,7 @@ export default function AboutPage() {
             A full-stack creative and growth company built to help ambitious businesses,
             founders, and brands become impossible to ignore.
           </p>
-
-          <div className="about-page-hero-media-wrap">
-            <div className="about-page-hero-media">
-              <img
-                src="/images/about-page-team.jpg"
-                alt="Team Escape Media"
-                width="1600"
-                height="900"
-              />
-              <div className="about-page-hero-media-overlay"></div>
-            </div>
-            <span className="about-page-hero-caption">Team Escape Media — Since 22 July 2024</span>
-          </div>
+          <span className="about-page-hero-caption">Team Escape Media — Since 22 July 2024</span>
         </div>
       </section>
 
