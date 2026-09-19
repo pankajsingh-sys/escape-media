@@ -127,7 +127,6 @@ export default function AboutPage() {
       {/* Story */}
       <section className="about-page-story">
         <div className="container">
-          <p className="section-label"><span>01</span> — Our Story</p>
           <p className="about-page-lead" data-reveal>
             Escape Media is a full-stack creative and growth company built to help ambitious
             businesses, founders, and brands become <span className="accent">impossible to ignore.</span>
@@ -163,7 +162,6 @@ export default function AboutPage() {
       {/* Services */}
       <section className="about-page-services" id="about-services">
         <div className="container">
-          <p className="section-label"><span>02</span> — Our Services</p>
           <h2 className="section-heading about-page-services-heading">What We Do.</h2>
 
           <div className="about-page-services-list">
@@ -181,7 +179,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <Testimonials number="03" />
+      <Testimonials />
 
       {/* CTA */}
       <section className="about-page-cta">

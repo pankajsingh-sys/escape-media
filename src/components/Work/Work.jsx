@@ -34,10 +34,6 @@ export default function Work() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.work-header .section-label', {
-        opacity: 0, y: 20, duration: 0.6,
-        scrollTrigger: { trigger: '.work-header', start: 'top 80%', once: true },
-      });
       gsap.from('.work-heading', {
         opacity: 0, y: 30, duration: 0.7,
         scrollTrigger: { trigger: '.work-header', start: 'top 80%', once: true },
@@ -57,7 +53,6 @@ export default function Work() {
     <section className="work" ref={sectionRef} aria-label="Selected work">
       <div className="container">
         <div className="work-header">
-          <p className="section-label"><span>03</span> — Selected Work</p>
           <h2 className="work-heading">Work worth remembering.</h2>
         </div>
 

@@ -47,17 +47,13 @@ function initials(name) {
   return name.split(' ').map((w) => w[0]).join('').slice(0, 2);
 }
 
-export default function Testimonials({ number = '05' }) {
+export default function Testimonials() {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.section-label', {
-        opacity: 0, y: 20, duration: 0.6,
-        scrollTrigger: { trigger: sectionRef.current, start: 'top 80%', once: true },
-      });
       gsap.from('.testimonials-heading', {
         opacity: 0, y: 30, duration: 0.7,
         scrollTrigger: { trigger: sectionRef.current, start: 'top 80%', once: true },
@@ -123,7 +119,6 @@ export default function Testimonials({ number = '05' }) {
       <div className="container">
         <div className="testimonials-header">
           <div>
-            <p className="section-label"><span>{number}</span> — Testimonials</p>
             <h2 className="section-heading testimonials-heading">Words From Our Clients.</h2>
           </div>
           <div className="testimonial-nav">

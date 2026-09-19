@@ -19,10 +19,6 @@ export default function FAQ() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.faq-header .section-label', {
-        opacity: 0, y: 20, duration: 0.6,
-        scrollTrigger: { trigger: sectionRef.current, start: 'top 80%', once: true },
-      });
       gsap.from('.faq-heading', {
         opacity: 0, y: 30, duration: 0.7,
         scrollTrigger: { trigger: sectionRef.current, start: 'top 80%', once: true },
@@ -43,7 +39,6 @@ export default function FAQ() {
     <section className="faq" id="faq" ref={sectionRef} aria-label="Frequently asked questions">
       <div className="container">
         <div className="faq-header">
-          <p className="section-label"><span>06</span> — FAQ</p>
           <h2 className="faq-heading">
             You Ask.<br />We Answer.
           </h2>

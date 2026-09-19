@@ -18,8 +18,7 @@ export default function About() {
         }
       });
 
-      tl.from('.about .section-label', { opacity: 0, y: 20, duration: 0.6 })
-        .from('.about-heading', { opacity: 0, y: 30, duration: 0.7 }, '-=0.3')
+      tl.from('.about-heading', { opacity: 0, y: 30, duration: 0.7 })
         .from('.about-image-wrapper', {
           opacity: 0,
           clipPath: 'inset(100% 0 0 0)',
@@ -44,7 +43,6 @@ export default function About() {
   return (
     <section className="about" id="about" ref={sectionRef} aria-label="About Escape Media">
       <div className="container">
-        <p className="section-label"><span>01</span> — Who We Are</p>
         <div className="about-grid">
           <div className="about-content">
             <h2 className="about-heading">

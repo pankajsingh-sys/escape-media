@@ -54,21 +54,6 @@ body {
   padding-right: var(--grid-padding);
 }
 
-/* --- Section Label --- */
-.section-label {
-  font-family: var(--font-body);
-  font-size: var(--text-label);
-  font-weight: 500;
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-lg);
-}
-
-.section-label span {
-  color: var(--color-accent);
-}
-
 /* --- Section Heading --- */
 .section-heading {
   font-family: var(--font-heading);

@@ -95,10 +95,6 @@ export default function Services() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Header animation
-      gsap.from('.services-intro .section-label', {
-        opacity: 0, y: 20, duration: 0.6,
-        scrollTrigger: { trigger: '.services-intro', start: 'top 80%', once: true },
-      });
       gsap.from('.services-heading', {
         opacity: 0, y: 30, duration: 0.7,
         scrollTrigger: { trigger: '.services-intro', start: 'top 80%', once: true },
@@ -127,7 +123,6 @@ export default function Services() {
       <div className="container services-grid">
         
         <div className="services-intro">
-          <p className="section-label"><span>02</span> — What We Do</p>
           <h2 className="services-heading">Ideas into impact.</h2>
         </div>
 

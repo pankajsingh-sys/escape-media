@@ -37,7 +37,7 @@ function HomePage() {
       <Statement />
       <Services />
       <SocialProof />
-      <Testimonials number="05" />
+      <Testimonials />
       <FAQ />
       <ContactCTA />
       <Contact />

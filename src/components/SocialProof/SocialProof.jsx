@@ -34,7 +34,6 @@ export default function SocialProof() {
     <section className="social-proof" ref={sectionRef} aria-label="Trusted by clients">
       <div className="container">
         <div className="social-proof-header">
-          <p className="section-label"><span>04</span> — Trusted By</p>
           <h2 className="social-proof-heading">Loved by Brands</h2>
           <p className="social-proof-sub">Serving 100+ Clients Globally</p>
         </div>
