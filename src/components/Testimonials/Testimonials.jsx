@@ -70,6 +70,26 @@ export default function Testimonials({ number = '05' }) {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    // A trackpad's "vertical" scroll almost always carries a tiny horizontal
+    // component. Since this track scrolls horizontally, the browser would
+    // otherwise swallow the whole gesture trying to scroll it sideways,
+    // making the page feel stuck here. When the gesture is vertically
+    // dominant, forward it to the page instead of letting the track eat it.
+    const handleWheel = (e) => {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+        window.scrollBy(0, e.deltaY);
+      }
+    };
+
+    track.addEventListener('wheel', handleWheel, { passive: false });
+    return () => track.removeEventListener('wheel', handleWheel);
+  }, []);
+
   const scrollToSlide = useCallback((index) => {
     const track = trackRef.current;
     if (!track) return;
