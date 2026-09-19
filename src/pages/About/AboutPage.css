@@ -94,7 +94,7 @@
 
 /* --- Highlights strip --- */
 .about-page-highlights-section {
-  padding: var(--space-xl) 0;
+  padding: var(--space-2xl) 0;
   border-top: var(--border);
   border-bottom: var(--border);
   background: var(--color-bg-primary);
@@ -135,7 +135,7 @@
 
 /* --- Story --- */
 .about-page-story {
-  padding: var(--space-3xl) 0;
+  padding: var(--section-gap) 0;
 }
 
 .about-page-lead {
@@ -167,7 +167,7 @@
 /* --- Ecosystem statement --- */
 .about-page-ecosystem {
   position: relative;
-  padding: var(--space-3xl) 0;
+  padding: var(--section-gap) 0;
   border-top: var(--border);
   text-align: center;
 }
@@ -208,7 +208,7 @@
 
 /* --- Services --- */
 .about-page-services {
-  padding: var(--space-3xl) 0;
+  padding: var(--section-gap) 0;
   border-top: var(--border);
 }
 
@@ -305,7 +305,7 @@
 
 /* --- Testimonials (slider) --- */
 .about-page-testimonials {
-  padding: var(--space-3xl) 0;
+  padding: var(--section-gap) 0;
   border-top: var(--border);
   overflow: hidden;
 }
@@ -470,7 +470,7 @@
 /* --- CTA --- */
 .about-page-cta {
   position: relative;
-  padding: var(--space-3xl) 0;
+  padding: var(--section-gap) 0;
   border-top: var(--border);
   text-align: center;
   overflow: hidden;
@@ -513,6 +513,9 @@
 }
 
 @media (max-width: 768px) {
+  .about-page-highlights-section {
+    padding: var(--space-xl) 0;
+  }
   .about-page-hero {
     min-height: 78svh;
     padding-top: 80px;
@@ -520,11 +523,12 @@
   .about-page-hero-content {
     padding: var(--space-xl) 0;
   }
+  .about-page-heading {
+    font-size: clamp(42px, 9vw, 56px);
+    font-weight: 700;
+  }
   .about-page-hero-sub {
     margin-bottom: var(--space-lg);
-  }
-  .about-page-story {
-    padding: var(--space-2xl) 0;
   }
   .about-page-lead {
     padding-left: var(--space-md);
@@ -552,12 +556,6 @@
   .about-page-highlight:nth-last-child(2):nth-child(odd) {
     border-right: none;
   }
-  .about-page-ecosystem {
-    padding: var(--space-2xl) 0;
-  }
-  .about-page-services {
-    padding: var(--space-2xl) 0;
-  }
   .about-page-service-row {
     flex-wrap: wrap;
     gap: var(--space-xs);
@@ -584,15 +582,16 @@
     flex-basis: 88%;
     padding: var(--space-md);
   }
-  .about-page-cta {
-    padding: var(--space-2xl) 0;
-  }
 }
 
 @media (max-width: 430px) {
   .about-page-hero {
     min-height: 85svh;
     padding-top: 72px;
+  }
+  .about-page-heading {
+    font-size: clamp(38px, 10vw, 50px);
+    font-weight: 700;
   }
   .about-page-highlight {
     flex: 0 0 100%;
