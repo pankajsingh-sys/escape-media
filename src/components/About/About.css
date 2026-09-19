@@ -117,6 +117,9 @@
     grid-template-columns: 1fr;
     gap: var(--space-lg);
   }
+  .about-heading {
+    font-size: clamp(26px, 7.5vw, 36px);
+  }
   .about-image-wrapper {
     order: 1;
   }
