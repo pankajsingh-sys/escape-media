@@ -12,9 +12,11 @@
   min-height: 90svh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   background: var(--color-black);
+  padding-top: 90px;
 }
 
 .about-page-hero-media {
@@ -27,31 +29,31 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 25%;
+  object-position: center top;
 }
 
 .about-page-hero-overlay {
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.35) 0%,
-    rgba(0, 0, 0, 0.25) 35%,
-    rgba(0, 0, 0, 0.85) 85%,
-    rgba(8, 8, 8, 1) 100%
-  );
+  background:
+    radial-gradient(ellipse 900px 550px at 50% 55%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.25) 60%, rgba(0, 0, 0, 0) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.6) 100%);
 }
 
 .about-page-hero-content {
   position: relative;
   z-index: 3;
-  padding-top: 110px;
-  padding-bottom: var(--space-2xl);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-2xl) 0;
 }
 
 .about-page-eyebrow {
   margin-bottom: var(--space-md);
+  justify-content: center;
 }
 
 .about-page-heading {
@@ -72,7 +74,7 @@
   line-height: var(--leading-body);
   color: rgba(255, 255, 255, 0.9);
   max-width: 620px;
-  margin-bottom: var(--space-lg);
+  margin: 0 auto var(--space-lg);
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
@@ -517,11 +519,11 @@
 
 @media (max-width: 768px) {
   .about-page-hero {
-    min-height: 70svh;
+    min-height: 78svh;
+    padding-top: 80px;
   }
   .about-page-hero-content {
-    padding-top: 100px;
-    padding-bottom: var(--space-xl);
+    padding: var(--space-xl) 0;
   }
   .about-page-hero-sub {
     margin-bottom: var(--space-lg);
@@ -594,10 +596,8 @@
 
 @media (max-width: 430px) {
   .about-page-hero {
-    min-height: 78svh;
-  }
-  .about-page-hero-content {
-    padding-top: 90px;
+    min-height: 85svh;
+    padding-top: 72px;
   }
   .about-page-highlight {
     flex: 0 0 100%;
