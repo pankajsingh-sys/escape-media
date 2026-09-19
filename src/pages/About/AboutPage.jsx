@@ -98,8 +98,7 @@ export default function AboutPage() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from('.about-page-hero-media', { opacity: 0, scale: 1.08, duration: 1.2, ease: 'power3.out' });
-      gsap.from('.about-page-eyebrow', { opacity: 0, y: 20, duration: 0.6, delay: 0.2 });
-      gsap.from('.about-page-heading', { opacity: 0, y: 30, duration: 0.7, delay: 0.3 });
+      gsap.from('.about-page-heading', { opacity: 0, y: 30, duration: 0.7, delay: 0.2 });
       gsap.from('.about-page-hero-sub', { opacity: 0, y: 20, duration: 0.6, delay: 0.4 });
 
       document.querySelectorAll('[data-reveal]').forEach((el) => {
@@ -175,7 +174,6 @@ export default function AboutPage() {
         <div className="about-page-hero-overlay" aria-hidden="true"></div>
 
         <div className="container about-page-hero-content">
-          <p className="section-label about-page-eyebrow"><span>About</span> — Escape Media</p>
           <h1 className="about-page-heading">
             We Don't Just Build Brands.<br />
             We Build <span className="accent">What Makes Them Grow.</span>
