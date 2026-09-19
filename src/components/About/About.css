@@ -74,6 +74,7 @@
   overflow: hidden;
   height: 100%;
   min-height: 100%; /* Ensure it stretches */
+  background: var(--color-bg-secondary);
 }
 
 .about-image-wrapper img {
@@ -110,6 +111,21 @@
 @media (max-width: 1024px) {
   .about-grid {
     gap: var(--space-xl);
+  }
+}
+
+/* Desktop: size the frame to the photo's own aspect ratio so the
+   full team is visible with no cropping and no empty letterboxing */
+@media (min-width: 769px) {
+  .about-image-wrapper {
+    align-self: center;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1170 / 445;
+  }
+  .about-image-wrapper img {
+    position: relative;
+    object-fit: cover;
   }
 }
 
