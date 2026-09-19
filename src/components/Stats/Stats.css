@@ -6,7 +6,9 @@
   padding: var(--space-2xl) 0;
   border-top: var(--border);
   border-bottom: var(--border);
-  background: var(--color-bg-primary);
+  background:
+    radial-gradient(ellipse 900px 260px at 50% 50%, rgba(215, 25, 32, 0.08) 0%, rgba(215, 25, 32, 0) 75%),
+    var(--color-bg-primary);
 }
 
 .stats-grid {

@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Footer() {
   const footerRef = useRef(null);
+  const marqueeTweenRef = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -39,7 +40,7 @@ export default function Footer() {
       });
       gsap.from('.footer-tagline', {
         opacity: 0, y: 10, duration: 0.5, delay: 0.5,
-        scrollTrigger: { trigger: '.footer-bottom', start: 'top 95%', once: true },
+        scrollTrigger: { trigger: '.footer-bottom', start: 'top bottom', once: true },
       });
       gsap.from('.footer-massive-text', {
         opacity: 0,
@@ -47,14 +48,14 @@ export default function Footer() {
         scale: 0.9,
         duration: 1,
         ease: 'power3.out',
-        scrollTrigger: { trigger: '.footer-massive-text', start: 'top 95%', once: true },
+        scrollTrigger: { trigger: '.footer-massive-text', start: 'top bottom', once: true },
       });
       
       // Infinite marquee animation
-      gsap.to('.marquee-content', {
+      marqueeTweenRef.current = gsap.to('.marquee-content', {
         xPercent: -50,
         ease: 'none',
-        duration: 45, // Slowed down significantly
+        duration: 40,
         repeat: -1,
       });
     }, footerRef);
@@ -110,10 +111,21 @@ export default function Footer() {
           <span className="footer-tagline">Your Brand. Our Creativity.</span>
         </div>
 
-        <div className="footer-massive-text" aria-hidden="true">
+        <div
+          className="footer-massive-text"
+          aria-hidden="true"
+          onMouseEnter={() => marqueeTweenRef.current?.pause()}
+          onMouseLeave={() => marqueeTweenRef.current?.play()}
+        >
           <div className="marquee-content">
-            <span>ESCAPE MEDIA • ESCAPE MEDIA • ESCAPE MEDIA •&nbsp;</span>
-            <span>ESCAPE MEDIA • ESCAPE MEDIA • ESCAPE MEDIA •&nbsp;</span>
+            {[0, 1].map((i) => (
+              <span className="marquee-set" key={i}>
+                <span className="marquee-solid">Escape Media</span>
+                <span className="marquee-star">✦</span>
+                <span className="marquee-outline">Let's Create Together</span>
+                <span className="marquee-star">✦</span>
+              </span>
+            ))}
           </div>
         </div>
       </div>

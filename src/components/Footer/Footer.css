@@ -97,14 +97,15 @@
 
 .footer-massive-text {
   font-family: 'Raleway', sans-serif;
-  font-size: clamp(80px, 16vw, 400px);
+  font-size: clamp(56px, 10vw, 220px);
   font-weight: 800;
   line-height: 0.9;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
   text-transform: uppercase;
   white-space: nowrap;
   margin-top: var(--space-3xl);
   user-select: none;
+  cursor: default;
   overflow: hidden;
   width: 100%;
   display: flex;
@@ -116,13 +117,37 @@
   /* GSAP handles animation now */
 }
 
-.marquee-content span {
+.marquee-set {
+  display: flex;
+  align-items: center;
+}
+
+.marquee-solid {
   display: inline-block;
-  padding-right: 2vw;
+  padding-right: 0.5em;
   background: linear-gradient(180deg, #ff2028 0%, #6e0000 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding-bottom: 20px; /* Prevent clipping */
+}
+
+.marquee-outline {
+  display: inline-block;
+  padding-right: 0.5em;
+  padding-bottom: 20px;
+  font-style: italic;
+  font-weight: 500;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.65);
+}
+
+.marquee-star {
+  display: inline-block;
+  padding-right: 0.5em;
+  padding-bottom: 20px;
+  font-size: 0.35em;
+  color: var(--color-accent);
+  align-self: center;
 }
 
 /* --- Responsive --- */
