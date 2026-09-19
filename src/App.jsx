@@ -10,6 +10,7 @@ import About from './components/About/About';
 import Statement from './components/Statement/Statement';
 import Services from './components/Services/Services';
 import SocialProof from './components/SocialProof/SocialProof';
+import Testimonials from './components/Testimonials/Testimonials';
 import FAQ from './components/FAQ/FAQ';
 import ContactCTA from './components/ContactCTA/ContactCTA';
 import Contact from './components/Contact/Contact';
@@ -36,6 +37,7 @@ function HomePage() {
       <Statement />
       <Services />
       <SocialProof />
+      <Testimonials number="05" />
       <FAQ />
       <ContactCTA />
       <Contact />

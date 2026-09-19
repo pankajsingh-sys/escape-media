@@ -43,7 +43,7 @@ export default function FAQ() {
     <section className="faq" id="faq" ref={sectionRef} aria-label="Frequently asked questions">
       <div className="container">
         <div className="faq-header">
-          <p className="section-label"><span>05</span> — FAQ</p>
+          <p className="section-label"><span>06</span> — FAQ</p>
           <h2 className="faq-heading">
             You Ask.<br />We Answer.
           </h2>
