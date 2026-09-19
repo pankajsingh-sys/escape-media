@@ -47,6 +47,45 @@ const services = [
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80&auto=format&fit=crop',
     imageAlt: 'Marketing analytics dashboards on screen in a modern office',
   },
+  {
+    number: '04',
+    title: ['TVC', 'Ads'],
+    description: 'Create high-impact television commercials that capture attention and bring brands to life.',
+    list: [
+      'TVC Scripting & Concept',
+      'Studio & On-Location Shoots',
+      'Post-Production & VFX',
+      'Broadcast-Ready Delivery',
+    ],
+    image: 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&q=80&auto=format&fit=crop',
+    imageAlt: 'Vintage film projector casting light through smoke on a film set',
+  },
+  {
+    number: '05',
+    title: ['Branding'],
+    description: 'Build distinctive brand identities that make your business memorable, recognizable, and relevant.',
+    list: [
+      'Logo & Visual Identity',
+      'Brand Guidelines',
+      'Packaging & Collateral',
+      'Brand Positioning',
+    ],
+    image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80&auto=format&fit=crop',
+    imageAlt: 'Designer\'s desk with graphic design software open on a tablet',
+  },
+  {
+    number: '06',
+    title: ['Social Media', 'Management'],
+    description: 'Grow your social presence with strategic content, consistent storytelling, and meaningful engagement.',
+    list: [
+      'Content Calendars',
+      'Community Management',
+      'Platform Strategy',
+      'Engagement & Growth',
+    ],
+    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80&auto=format&fit=crop',
+    imageAlt: 'Person managing social media content on a laptop and phone',
+  },
 ];
 
 export default function Services() {
