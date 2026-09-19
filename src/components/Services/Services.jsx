@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Services.css';
@@ -51,6 +51,7 @@ const services = [
 
 export default function Services() {
   const sectionRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -91,9 +92,16 @@ export default function Services() {
           <h2 className="services-heading">Ideas into impact.</h2>
         </div>
 
-        <div className="services-accordion-wrapper">
+        <div
+          className="services-accordion-wrapper"
+          onMouseLeave={() => setActiveIndex(0)}
+        >
           {services.map((service, i) => (
-            <div className="service-accordion-item" key={i}>
+            <div
+              className={`service-accordion-item${i === activeIndex ? ' active' : ''}`}
+              key={i}
+              onMouseEnter={() => setActiveIndex(i)}
+            >
               <div className="service-accordion-bg">
                 <img
                   src={service.image}
