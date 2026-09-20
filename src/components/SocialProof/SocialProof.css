@@ -63,6 +63,9 @@
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
+  .social-proof-header {
+    margin-bottom: var(--space-xl);
+  }
   .logo-grid {
     grid-template-columns: repeat(2, 1fr);
   }

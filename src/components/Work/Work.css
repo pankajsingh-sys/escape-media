@@ -148,6 +148,9 @@
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
+  .work-header {
+    margin-bottom: var(--space-xl);
+  }
   .work-item:nth-child(2) .work-image-wrapper {
     grid-template-columns: 1fr;
   }

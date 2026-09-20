@@ -159,6 +159,9 @@
 }
 
 @media (max-width: 768px) {
+  .footer-accent-line {
+    margin-bottom: var(--space-xl);
+  }
   .footer-top {
     grid-template-columns: 1fr;
     gap: var(--space-lg);

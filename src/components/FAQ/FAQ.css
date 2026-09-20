@@ -133,6 +133,9 @@
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
+  .faq-header {
+    margin-bottom: var(--space-xl);
+  }
   .faq-question {
     padding: var(--space-md) 0;
     gap: var(--space-sm);
