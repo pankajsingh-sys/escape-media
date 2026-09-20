@@ -6,11 +6,30 @@ import './FAQ.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const faqData = [
-  { question: 'Question here', answer: 'Answer will be added here.' },
-  { question: 'Question here', answer: 'Answer will be added here.' },
-  { question: 'Question here', answer: 'Answer will be added here.' },
-  { question: 'Question here', answer: 'Answer will be added here.' },
-  { question: 'Question here', answer: 'Answer will be added here.' },
+  {
+    question: 'What services does Escape Media offer?',
+    answer: 'We cover every layer of brand growth under one roof — Personal Branding, Branding, Content Creation, Social Media Management, TVC Ads, and Performance Marketing. Instead of hiring separate vendors for each, you get one team that handles strategy, creative, and execution together.',
+  },
+  {
+    question: 'How is Escape Media different from a typical agency?',
+    answer: "Most agencies specialize in one thing and hand you off elsewhere for the rest. We're built as one ecosystem — strategy, creativity, content, media, and performance all work together, so your brand stays consistent from the first idea to the final conversion.",
+  },
+  {
+    question: 'Do you work with clients outside India?',
+    answer: "Yes. We've worked with founders and businesses across India, the UAE, the UK, Canada, Australia, Germany, and New Zealand — all managed remotely with the same hands-on process we use locally.",
+  },
+  {
+    question: 'How long does a typical project take?',
+    answer: "It depends on scope. A personal branding or content sprint can start showing results within a few weeks, while a full brand identity or ongoing performance marketing engagement is typically planned in 3-6 month cycles so we have room to test, learn, and scale what works.",
+  },
+  {
+    question: 'How much does it cost to work with Escape Media?',
+    answer: "Every brand's starting point is different, so we don't run one fixed package. On a quick call, we learn about your goals and current setup, then put together a scope and quote tailored to what you actually need — no generic bundles.",
+  },
+  {
+    question: 'How do I get started?',
+    answer: 'Book a call using the button below. We\'ll spend it understanding your brand, your goals, and where you want to be — then map out the right mix of services to get you there.',
+  },
 ];
 
 export default function FAQ() {
