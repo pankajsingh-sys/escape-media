@@ -124,24 +124,15 @@
   }
   .about-image-wrapper {
     order: 1;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1170 / 1288;
   }
   .about-content {
     order: 2;
   }
-  .about-image-wrapper {
-    min-height: 280px;
-  }
   .about-image-wrapper img {
     position: relative;
-    height: 280px;
-  }
-}
-
-@media (max-width: 430px) {
-  .about-image-wrapper {
-    min-height: 220px;
-  }
-  .about-image-wrapper img {
-    height: 220px;
+    height: 100%;
   }
 }
