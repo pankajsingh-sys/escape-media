@@ -135,10 +135,34 @@
 
 /* --- Story --- */
 .about-page-story {
+  position: relative;
   padding: var(--section-gap) 0;
+  overflow: hidden;
+}
+
+.about-page-story-glow {
+  position: absolute;
+  top: -120px;
+  left: -80px;
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(ellipse at center, rgba(215, 25, 32, 0.14) 0%, rgba(215, 25, 32, 0) 70%);
+  pointer-events: none;
+}
+
+.about-page-lead-mark {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 100px;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--color-accent);
+  opacity: 0.4;
+  margin-bottom: -20px;
 }
 
 .about-page-lead {
+  position: relative;
   font-family: var(--font-heading);
   font-size: clamp(24px, 3.2vw, 40px);
   font-weight: 500;
@@ -146,22 +170,85 @@
   letter-spacing: var(--tracking-tight);
   color: var(--color-text-primary);
   max-width: 900px;
-  margin-bottom: var(--space-2xl);
+  margin-bottom: var(--space-3xl);
   padding-left: var(--space-lg);
   border-left: 2px solid var(--color-accent);
 }
 
-.about-page-story-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-xl) var(--space-2xl);
+/* --- Milestone timeline --- */
+.about-page-timeline {
+  position: relative;
+  max-width: 900px;
 }
 
-.about-page-story-p {
+.about-page-milestone {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.about-page-milestone-marker {
+  flex-shrink: 0;
+  width: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-page-milestone-dot {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(215, 25, 32, 0.5);
+  background: var(--color-bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.about-page-milestone-line {
+  flex-grow: 1;
+  width: 1px;
+  min-height: var(--space-xl);
+  background: linear-gradient(to bottom, rgba(215, 25, 32, 0.5), rgba(215, 25, 32, 0.05));
+  margin: var(--space-sm) 0;
+}
+
+.about-page-milestone-content {
+  flex: 1;
+  padding-bottom: var(--space-2xl);
+}
+
+.about-page-milestone-tag {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-label);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xs);
+  padding-top: 10px;
+}
+
+.about-page-milestone-title {
+  font-family: var(--font-heading);
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.about-page-milestone-text {
   font-family: var(--font-body);
   font-size: var(--text-body);
   line-height: var(--leading-body);
   color: var(--color-text-secondary);
+  max-width: 600px;
 }
 
 /* --- Ecosystem statement --- */
@@ -360,13 +447,29 @@
   .about-page-hero-sub {
     margin-bottom: var(--space-lg);
   }
+  .about-page-lead-mark {
+    font-size: 64px;
+  }
   .about-page-lead {
     padding-left: var(--space-md);
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-2xl);
   }
-  .about-page-story-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
+  .about-page-milestone {
+    gap: var(--space-md);
+  }
+  .about-page-milestone-marker {
+    width: 36px;
+  }
+  .about-page-milestone-dot {
+    width: 36px;
+    height: 36px;
+    font-size: 11px;
+  }
+  .about-page-milestone-content {
+    padding-bottom: var(--space-xl);
+  }
+  .about-page-milestone-tag {
+    padding-top: 4px;
   }
   .about-page-highlights {
     flex-wrap: wrap;

@@ -41,12 +41,32 @@ const highlights = [
   { value: '100+', label: 'Clients Globally' },
 ];
 
-const storyParagraphs = [
-  "What started on 22 July 2024 has grown from a room into a company, from a small beginning into a growing team, and from building at home to serving 100+ clients globally.",
-  "At Escape Media, we believe brand growth doesn't happen through one service alone. It happens when strategy, creativity, content, media, and performance work together as one ecosystem.",
-  "That's why we bring every layer of brand growth under one roof — from Personal Branding, Branding and Content Creation to Social Media Management, TVC Ads and Performance Marketing.",
-  "Our work is driven by one simple goal: make brands visible, memorable, and commercially successful.",
-  "Today, Escape Media is a growing team of creative minds, production talent, designers, editors, and media specialists — united by one dream: to build brands that matter and deliver results that count.",
+const storyMilestones = [
+  {
+    tag: '22 July 2024',
+    title: 'The Beginning',
+    text: "What started on 22 July 2024 has grown from a room into a company, from a small beginning into a growing team, and from building at home to serving 100+ clients globally.",
+  },
+  {
+    tag: 'Our Belief',
+    title: 'Never Just One Service',
+    text: "At Escape Media, we believe brand growth doesn't happen through one service alone. It happens when strategy, creativity, content, media, and performance work together as one ecosystem.",
+  },
+  {
+    tag: 'Our Approach',
+    title: 'Every Layer, One Roof',
+    text: "That's why we bring every layer of brand growth under one roof — from Personal Branding, Branding and Content Creation to Social Media Management, TVC Ads and Performance Marketing.",
+  },
+  {
+    tag: 'Our Goal',
+    title: 'Results That Count',
+    text: "Our work is driven by one simple goal: make brands visible, memorable, and commercially successful.",
+  },
+  {
+    tag: 'Today',
+    title: 'A Growing Team',
+    text: "Today, Escape Media is a growing team of creative minds, production talent, designers, editors, and media specialists — united by one dream: to build brands that matter and deliver results that count.",
+  },
 ];
 
 export default function AboutPage() {
@@ -126,17 +146,29 @@ export default function AboutPage() {
 
       {/* Story */}
       <section className="about-page-story">
+        <div className="about-page-story-glow" aria-hidden="true"></div>
         <div className="container">
+          <span className="about-page-lead-mark" aria-hidden="true">&ldquo;</span>
           <p className="about-page-lead" data-reveal>
             Escape Media is a full-stack creative and growth company built to help ambitious
             businesses, founders, and brands become <span className="accent">impossible to ignore.</span>
           </p>
 
-          <div className="about-page-story-grid">
-            {storyParagraphs.map((p, i) => (
-              <p className="about-page-story-p" key={i} data-reveal>
-                {p}
-              </p>
+          <div className="about-page-timeline">
+            {storyMilestones.map((m, i) => (
+              <div className="about-page-milestone" key={m.title} data-reveal>
+                <div className="about-page-milestone-marker">
+                  <span className="about-page-milestone-dot">{String(i + 1).padStart(2, '0')}</span>
+                  {i < storyMilestones.length - 1 && (
+                    <span className="about-page-milestone-line" aria-hidden="true"></span>
+                  )}
+                </div>
+                <div className="about-page-milestone-content">
+                  <span className="about-page-milestone-tag">{m.tag}</span>
+                  <h3 className="about-page-milestone-title">{m.title}</h3>
+                  <p className="about-page-milestone-text">{m.text}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
