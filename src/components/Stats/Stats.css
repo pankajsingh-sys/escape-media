@@ -3,7 +3,7 @@
    ============================================ */
 
 .stats {
-  padding: var(--space-2xl) 0;
+  padding: var(--section-gap) 0;
   border-top: var(--border);
   border-bottom: var(--border);
   background:
@@ -54,9 +54,6 @@
 }
 
 @media (max-width: 768px) {
-  .stats {
-    padding: var(--space-xl) 0;
-  }
   .stats-grid {
     flex-direction: column;
   }

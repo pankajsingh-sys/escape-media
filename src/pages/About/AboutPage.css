@@ -94,7 +94,7 @@
 
 /* --- Highlights strip --- */
 .about-page-highlights-section {
-  padding: var(--space-2xl) 0;
+  padding: var(--section-gap) 0;
   border-top: var(--border);
   border-bottom: var(--border);
   background: var(--color-bg-primary);
@@ -453,9 +453,6 @@
 }
 
 @media (max-width: 768px) {
-  .about-page-highlights-section {
-    padding: var(--space-xl) 0;
-  }
   .about-page-hero {
     min-height: 78svh;
     padding-top: 80px;
