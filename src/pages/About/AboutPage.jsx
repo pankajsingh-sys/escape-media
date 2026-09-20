@@ -46,28 +46,76 @@ const storyMilestones = [
     tag: '22 July 2024',
     title: 'The Beginning',
     text: "What started on 22 July 2024 has grown from a room into a company, from a small beginning into a growing team, and from building at home to serving 100+ clients globally.",
+    icon: 'rocket',
   },
   {
     tag: 'Our Belief',
     title: 'Never Just One Service',
     text: "At Escape Media, we believe brand growth doesn't happen through one service alone. It happens when strategy, creativity, content, media, and performance work together as one ecosystem.",
+    icon: 'network',
   },
   {
     tag: 'Our Approach',
     title: 'Every Layer, One Roof',
     text: "That's why we bring every layer of brand growth under one roof — from Personal Branding, Branding and Content Creation to Social Media Management, TVC Ads and Performance Marketing.",
+    icon: 'layers',
   },
   {
     tag: 'Our Goal',
     title: 'Results That Count',
     text: "Our work is driven by one simple goal: make brands visible, memorable, and commercially successful.",
+    icon: 'target',
   },
   {
     tag: 'Today',
     title: 'A Growing Team',
     text: "Today, Escape Media is a growing team of creative minds, production talent, designers, editors, and media specialists — united by one dream: to build brands that matter and deliver results that count.",
+    icon: 'team',
   },
 ];
+
+const milestoneIcons = {
+  rocket: (
+    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M32 4c8 6 12 16 12 26 0 6-2 12-5 17l-7 9-7-9c-3-5-5-11-5-17 0-10 4-20 12-26Z" />
+      <circle cx="32" cy="26" r="5" />
+      <path d="M22 42c-5 2-8 6-9 14 8-1 12-4 14-9" />
+      <path d="M42 42c5 2 8 6 9 14-8-1-12-4-14-9" />
+    </svg>
+  ),
+  network: (
+    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="32" cy="14" r="6" />
+      <circle cx="14" cy="46" r="6" />
+      <circle cx="50" cy="46" r="6" />
+      <path d="M28 19 18 41" />
+      <path d="M36 19 46 41" />
+      <path d="M20 46h24" />
+    </svg>
+  ),
+  layers: (
+    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M32 8 6 22l26 14 26-14Z" />
+      <path d="M6 32l26 14 26-14" />
+      <path d="M6 42l26 14 26-14" />
+    </svg>
+  ),
+  target: (
+    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="32" cy="32" r="24" />
+      <circle cx="32" cy="32" r="14" />
+      <circle cx="32" cy="32" r="4" />
+    </svg>
+  ),
+  team: (
+    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="24" cy="20" r="8" />
+      <path d="M8 52c0-10 7-16 16-16s16 6 16 16" />
+      <circle cx="46" cy="24" r="6" />
+      <path d="M40 52c0-8 4-13 10-14" />
+    </svg>
+  ),
+};
 
 export default function AboutPage() {
   const pageRef = useRef(null);
@@ -167,6 +215,9 @@ export default function AboutPage() {
                   <span className="about-page-milestone-tag">{m.tag}</span>
                   <h3 className="about-page-milestone-title">{m.title}</h3>
                   <p className="about-page-milestone-text">{m.text}</p>
+                </div>
+                <div className="about-page-milestone-icon" aria-hidden="true">
+                  {milestoneIcons[m.icon]}
                 </div>
               </div>
             ))}
